@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * Shanti Application to show scholarly collections
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function kmaps_standalone_menu() {
+  $items['subjects'] = array(
+    'title' => 'Subjects',
+    'description' => 'Creates a page that shows the initial content of the shanti application subjects',
+    'page callback' => 'kmaps_standalone_page',
+    'page arguments' => array('subjects'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+  $items['places'] = array(
+    'title' => 'Places',
+    'description' => 'Creates a page that shows the initial content of the shanti application places',
+    'page callback' => 'kmaps_standalone_page',
+    'page arguments' => array('places'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+    'menu_name' => 'main-menu',
+  );
+
+  return $items;
+}
+
+
+/**
+ * Function to create the page template for the shanti app
+ */
+function kmaps_standalone_page($var) {
+  return theme('kmaps_standalone_template', array('type' => $var));
+}
+
+/**
+ * Implement hook_theme().
+ */
+function kmaps_standalone_theme() {
+  return array(
+    'kmaps_standalone_template' => array(
+      'template' => 'kmaps_standalone_page',
+      'arguments' => array(),
+    ),
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

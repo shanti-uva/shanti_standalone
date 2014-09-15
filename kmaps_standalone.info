@@ -1,0 +1,3 @@
+name = Standalone Kmaps Module
+description = A standalone Kmaps module that is theme independent.
+core = 7.x
